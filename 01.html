@@ -1,0 +1,34 @@
+<meta charset="UTF-8">
+<script>
+/*
+Elabore um programa que solicite a nota do aluno(a) para cada item que compõe a nota trimestral e calcule qual foi a sua nota do trimestre (média ponderada) , e apresente na tela a composição da nota e nota total alcançada.
+Com bases na nota calculada emitira as seguintes mensagens:
+- Se o aluno(a) alcançar nota superior ou igual a 6,00 escrever “Parabéns você está aprovado !!!”.
+- Se o aluno(a) alcançar nota menor que 6,00 e maior que 4,00 escrever “Você está de recuperação !!!”..
+- Se o aluno(a) alcançar nota menor ou igual a 4,00 escrever “Você está reprovado !!!”
+- Prova: 50%
+- Listas: 30%
+- Mimo: 10%
+- Matemática Básica: 10%
+*/
+//ENTRADA
+    const prova = Number(prompt(`Qual a nota da prova?`).replace(",", "."));
+    const listas = Number(prompt(`Qual a nota das listas?`).replace(",", "."));
+    const mimo = Number(prompt(`Qual a nota do mimo?`).replace(",", "."));
+    const matematica = Number (prompt(`Qual a nota da matemática básica?`).replace(",", "."));
+
+//PROCESSAMENTO
+
+    let media = (prova / 10 * 5) + (listas / 10 * 3) + (mimo / 10 * 1) + (matematica / 10 * 1);
+
+//SAÍDA
+
+    if (media >= 6) {
+        document.write(`Parabéns você está aprovado !!!`);
+    } else if (media > 4) {
+        document.write(`Você está de recuperação !!!`);
+    } else if ( media <= 4){
+        document.write(`Você está reprovado !!!`);
+    }
+        document.write(`Sua média final é ${media.toFixed(2).replace(",", ".")}`);
+</script>
